@@ -21,58 +21,50 @@ def home():
 
 
 # the following are tabs for the "Type"
-@app.route('/types-of-diabetes')
-def home():
-    return render_template('type.html')
-
 @app.route('/type-1')
-def home():
+def type1():
     return render_template('type1.html')
 
 @app.route('/type-2')
-def home():
+def type2():
     return render_template('type2.html')
 
-@app.route('/type-generational')
-def home():
+@app.route('/type-gestational')
+def typeG():
     return render_template('typeG.html')
 
 
 # the following are tabs for the "Treatment" 
 @app.route('/treatment')
-def home():
+def treatment():
     return render_template('treatment.html')
 
 @app.route('/treatment-type1')
-def home():
+def treatment1():
     return render_template('treatment1.html')
 
 @app.route('/treatment-type2')
-def home():
+def treatment2():
     return render_template('treatment2.html')
 
-@app.route('/treatment-generational')
-def home():
+@app.route('/treatment-gestational')
+def treatmentG():
     return render_template('treatmentG.html')
 
 
 # the following are tabs for other pages
 @app.route('/prevention')
-def home():
+def prevention():
     return render_template('prevention.html')
 
 @app.route('/forum')
-def home():
+def forum():
     return render_template('forum.html')
 
 @app.route('/profile')
-def home():
+def profile():
     return render_template('profile.html')
 
-@app.route('/statistic')
-def home():
-    return render_template('statistic.html')
 
-@app.route('/source')
-def home():
-    return render_template('source.html')
+if __name__ == '__main__':
+    app.run(debug=True)

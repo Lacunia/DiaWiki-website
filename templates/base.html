@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}DiaWiki{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/base.css') }}">
+    {% block additional_css %}{% endblock %}
+    <script src="https://kit.fontawesome.com/e8b6ec3057.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <section class="header">
+        <a href="#"><img src="{{ url_for('static', filename='css/logo.png') }}"></a>
+        <nav>
+            <ul id="navbar">
+                <li><a href="{{ url_for('home') }}">Home</a></li>
+                <li>
+                    <div class="dropdown">
+                        <button class="dropbtn">Types of Diabetes
+                          <i class="fa fa-caret-down"></i>
+                        </button>
+                        <div class="dropdown-content">
+                          <a href="{{ url_for('type1') }}">Type I Diabetes</a>
+                          <a href="{{ url_for('type2') }}">Type II Diabetes</a>
+                          <a href="{{ url_for('typeG') }}">Gestational Diabetes</a>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="dropdown">
+                        <button class="dropbtn">Treatment
+                          <i class="fa fa-caret-down"></i>
+                        </button>
+                        <div class="dropdown-content">
+                           
+                          <a href="{{ url_for('treatment1') }}">Type I Diabetes</a>
+                          <a href="{{ url_for('treatment2') }}">Type II Diabetes</a>
+                          <a href="{{ url_for('treatmentG') }}">Gestational Diabetes</a>
+                        </div>
+                    </div>
+                </li>
+                <li><a href="{{ url_for('prevention') }}">Prevention</a></li>
+                <li><a href="{{ url_for('forum') }}">Forum</a></li>
+                <li><a href="{{ url_for('profile') }}">Profile</a></li>
+            </ul>
+        </nav>
+    </section>
+        
+    {% block content %}
+    {% endblock %}
+    <script rel="scriptsheet" href="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>
