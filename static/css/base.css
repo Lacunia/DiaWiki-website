@@ -48,7 +48,47 @@ body {
     width: 100%;
 }
 
-/* navbar/header */
+/* header */
+#header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 80px;
+    background-color: #E1F2FD;
+    box-shadow: 0 2px 10px rgb(17, 36, 48)
+}
+
+#logo {
+    width: 50px;
+    height: 50px;
+}
+
+/* navbar (the links) */
+#navbar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#navbar li {
+    list-style: none;
+    padding: 0 20px;
+    position: relative; 
+    /* 
+       first, we need to add relative position to the li element. 
+       This ensures that when we add the decorative bar under the tab, it will
+       also be relative to the li element, and not the whole page. 
+    */
+}
+
+#navbar li a {
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 600;
+    color: #16A4E1;
+    transition: 0.3s ease;
+}
+
 /* The dropdown container */
 .dropdown {
     float: left;
@@ -60,18 +100,38 @@ body {
     font-size: 16px;
     border: none;
     outline: none;
-    color: #0a84bf;
-    padding: 14px 16px;
+    color: #16A4E1;
+    padding: 0;
     background-color: inherit;
     font-family: inherit; /* Important for vertical align on mobile phones */
     margin: 0; /* Important for vertical align on mobile phones */
+    transition: 0.3s ease;
 }
   
-/* Add a red background color to navbar links on hover */
-.navbar a:hover, .dropdown:hover .dropbtn {
-    color: #09689B;
+
+#navbar li a:hover, 
+#navbar li a.active, 
+.dropdown:hover .dropbtn {
+    color: #0C5980;
 }
-  
+
+/* 
+    the '::after' pseudo-element creates a virtual element that is the last
+    last child of the selected element.
+*/
+/* the following adds a bar under the active/hovered button */
+#navbar li a.active::after,
+#navbar li a:hover::after {
+    content: "";
+    width: 30%;
+    height: 2px;
+    background-color: #0C5980;
+    position: absolute;
+    bottom: -4px;
+    left: 20px;
+}
+
+
 /* Dropdown content (hidden by default) */
 .dropdown-content {
     display: none;
@@ -85,11 +145,12 @@ body {
 /* Links inside the dropdown */
 .dropdown-content a {
     float: none;
-    color: #0a84bf;
+    color: #16A4E1;
     padding: 12px 16px;
     text-decoration: none;
     display: block;
     text-align: left;
+    transition: 0.3s ease;
 }
   
 /* Add a grey background color to dropdown links on hover */

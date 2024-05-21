@@ -21,15 +21,15 @@ def home():
 
 
 # the following are tabs for the "Type"
-@app.route('/type-1')
+@app.route('/type1')
 def type1():
     return render_template('type1.html')
 
-@app.route('/type-2')
+@app.route('/type2')
 def type2():
     return render_template('type2.html')
 
-@app.route('/type-gestational')
+@app.route('/typeGl')
 def typeG():
     return render_template('typeG.html')
 
@@ -39,15 +39,15 @@ def typeG():
 def treatment():
     return render_template('treatment.html')
 
-@app.route('/treatment-type1')
+@app.route('/treatment1')
 def treatment1():
     return render_template('treatment1.html')
 
-@app.route('/treatment-type2')
+@app.route('/treatment2')
 def treatment2():
     return render_template('treatment2.html')
 
-@app.route('/treatment-gestational')
+@app.route('/treatmentG')
 def treatmentG():
     return render_template('treatmentG.html')
 

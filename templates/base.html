@@ -9,11 +9,14 @@
     <script src="https://kit.fontawesome.com/e8b6ec3057.js" crossorigin="anonymous"></script>
 </head>
 <body>
-    <section class="header">
-        <a href="#"><img src="{{ url_for('static', filename='css/logo.png') }}"></a>
-        <nav>
+    <!-- This section tag allows me to adjust the whole header's layout/style -->
+    <section id="header">
+        <a href="#"><img src="{{ url_for('static', filename='img/logo.jpg') }}" id="logo"></a>
+        
+        <!-- The following section allows me to adjust the links on the navbar -->
+        <div>
             <ul id="navbar">
-                <li><a href="{{ url_for('home') }}">Home</a></li>
+                <li><a class="active" href="{{ url_for('home') }}">Home</a></li>
                 <li>
                     <div class="dropdown">
                         <button class="dropbtn">Types of Diabetes
@@ -32,7 +35,7 @@
                           <i class="fa fa-caret-down"></i>
                         </button>
                         <div class="dropdown-content">
-                           
+                          <a href="{{ url_for('treatment') }}">General</a>
                           <a href="{{ url_for('treatment1') }}">Type I Diabetes</a>
                           <a href="{{ url_for('treatment2') }}">Type II Diabetes</a>
                           <a href="{{ url_for('treatmentG') }}">Gestational Diabetes</a>
@@ -41,9 +44,10 @@
                 </li>
                 <li><a href="{{ url_for('prevention') }}">Prevention</a></li>
                 <li><a href="{{ url_for('forum') }}">Forum</a></li>
-                <li><a href="{{ url_for('profile') }}">Profile</a></li>
+                <li><a href="{{ url_for('profile') }}"><i class="fa-solid fa-user"></i></a></li>
+                <li><a href="">Login</a></li>
             </ul>
-        </nav>
+        </div>
     </section>
         
     {% block content %}

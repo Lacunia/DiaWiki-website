@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+{% block title %}Preventions{% endblock %}
+
+{% block additional_css %}
+    <!-- Link to child-specific CSS file -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/prevention.css') }}">
+{% endblock %}
+
+{% block content %}
+<h2>Preventions</h2>
+
+{% endblock %}

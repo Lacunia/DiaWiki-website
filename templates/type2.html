@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+{% block title %}Type 2 diabetes{% endblock %}
+
+{% block additional_css %}
+    <!-- Link to child-specific CSS file -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/type.css') }}">
+{% endblock %}
+
+{% block content %}
+<h2>Type 2 Diabetes</h2>
+
+{% endblock %}
