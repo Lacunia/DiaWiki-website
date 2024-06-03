@@ -1,0 +1,81 @@
+#hero {
+    background-image: url("/static/img/home/hero.jpg");
+    background-size: cover; /* to make the image cover the whole background */
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 90vh;
+    width: 100%;
+}
+
+#hero h1 {
+    padding: 30px 10px;
+}
+
+#intro {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+    height: 65vh;
+    width: 100%;
+    box-sizing: border-box;
+    padding-left: 40px;
+    padding-right: 40px;
+}
+
+#intro h3 {
+    padding-top: 18px;
+    font-size: 25px;
+}
+
+#three-cards {
+    display: flex;
+    justify-content: space-evenly;
+    height: 125vh;
+}
+
+#card {
+    height: 90vh;
+    width: 55vh;
+    text-align: center;
+}
+
+#card div {
+    width: inherit;
+    height: 50vh;
+    padding: 20px;
+    border: 2px solid #E1F2FD;
+    background-color: #F1F9FE;
+    margin: 0;
+}
+
+#card div h2 {
+    padding-bottom: 15px;
+}
+
+#card-img {
+    object-fit: cover;
+    width: inherit;
+    height: 60vh;
+    display: block; /* helps remove the gap between the img and div */
+    margin: 0;
+    padding: 0;
+}
+
+.square button {
+    padding: 10px;
+    margin: 25px;
+    background-color: #E1F2FD;
+    width: 170px;
+    height: 50px;
+    border-radius: 25px;
+    border: 1px solid #ABDEF9;
+    box-shadow: 1px 1px 2px rgb(17, 36, 48);
+    font-size: 17px;
+    font-weight: 600;
+    color: #16A4E1;
+}

@@ -8,6 +8,33 @@
 {% endblock %}
 
 {% block content %}
-<h2>Type 1 Diabetes</h2>
+<section class="container1">
+    <div class="sub-container up">
+        <img class="sub-image" src="{{ url_for('static', filename='img/type/card.png') }}">
+    </div>
+    <div class="sub-container down">
+        <div class="sub-item">
+            <h1>Type I Diabetes</h1>
+            <h4>This is also known as “juvenile” diabetes. It is a type of autoimmune disease, meaning that the body self attacks, where the cells that produce insulin in the pancreas are attacked and destroyed by your own body. Type 1 diabetes is commonly diagnosed in children and young adults and is more of a genetic condition.</h4>
+        </div>
+    </div>
+</section>
+<section class="container2">
+    <h2>Symptoms</h2>
+    <h4>Symptoms for type 1 diabetes develop quickly, usually over a few weeks or months.</h4>
+</section>
+<section class="container3">
+    <h2>Causes</h2>
+    <h4>
+        Here are some causes of type 1 diabetes:
+        <ul>
+            <li>Family history of type 1 diabetes</li>
+            <li>Injured pancreas</li>
+            <li>Presence of autoantibodies (something that attacks your own body's tissues or organs)</li>
+            <li>Physical stress</li>
+            <li>Exposure to illnesses caused by viruses</li>
+        </ul>
+    </h4>
+</section>
 
 {% endblock %}

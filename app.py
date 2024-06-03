@@ -21,6 +21,10 @@ def home():
 
 
 # the following are tabs for the "Type"
+@app.route('/type')
+def type():
+    return render_template('type.html')
+
 @app.route('/type1')
 def type1():
     return render_template('type1.html')

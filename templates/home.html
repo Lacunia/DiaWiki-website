@@ -8,9 +8,60 @@
 {% endblock %}
 
 {% block content %}
-<h1>
-    Regain Your Happiness! <br>
-    Don't Let Diabetes Trouble You!
-</h1>
+<section id="hero">
+    <h1>
+        <em>
+            Regain Your Happiness! <br>
+            Don't Let Diabetes Trouble You!
+        </em>
+    </h1>
+</section>
+<section id="intro">
+    <h2><em>About Diabetes</em></h2>
+    <h3>
+        This is a website dedicated to information about different types of Diabetes, their symptoms, where to get treatments, and how to prevent them. Besides information, we have build a community where those who have diabetes can feel free to share their own stories and connect with other patients. 
+    </h3>
+</section>
+<section id="three-cards">
+    <div id="card" class="section-p1">
+        <img id="card-img" src="{{ url_for('static', filename='img/home/vision.jpg') }}">
+        <div>
+            <h2><em>Vision</em></h2>
+            <h4>We hope that out website can become a shelter where those seeking help about diabetes can come rest and find the aid they needed.</h4>
+        </div>
+    </div>
+    <div id="card" class="section-p1">
+        <img id="card-img" src="{{ url_for('static', filename='img/home/information.gif') }}">
+        <div>
+            <h2><em>Information</em></h2>
+            <h4>Get information all about diabetes on this website. Navigate the website to find the diabetes information that you are looking for.</h4>
+        </div>
+    </div>
+    <div id="card" class="section-p1">
+        <img id="card-img" src="{{ url_for('static', filename='img/home/community.jpg') }}">
+        <div>
+            <h2><em>Community</em></h2>
+            <h4>Connect with those who share the same experience with you.  You are not alone on the journey to combat diabetes, so share you story and let more people know your feelings.</h4>
+        </div>
+    </div>
+</section>
+<section class="two-squares">
+    <img class="square" src="{{ url_for('static', filename='img/home/quote.jpg') }}">
+    <div class="square">
+        <h3>“DiaWiki has helped me connect with other people who also have diabetes. I am grateful for this chance to meet people seeking help just like me.”</h3>
+        <h5>Annie Li, A member of the website</h5>
+    </div>
+</section>
+<section id="image-slider">
+    <!--placeholder for the image slider-->
+    <!-- tutorial: https://www.youtube.com/watch?v=iBcjzaOvE94-->
+</section>
+<section class="two-squares">
+    <div class="square">
+        <h2>Become A Member To Share Your Story!</h2>
+        <button>Sign up</button>
+    </div>
+    <img class="square" src="{{ url_for('static', filename='img/home/sign-up.png') }}">
+</section>
 
 {% endblock %}

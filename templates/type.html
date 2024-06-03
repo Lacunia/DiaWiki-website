@@ -1,0 +1,60 @@
+{% extends "base.html" %}
+
+{% block title %}Types{% endblock %}
+
+{% block additional_css %}
+    <!-- Link to child-specific CSS file -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/type.css') }}">
+{% endblock %}
+
+{% block content %}
+<section class="g-container1">
+    <div>
+        <h1>Types of Diabetes</h1>
+        <h4>Diabetes is a disease caused by the buildup of extra sugar (glucose) in the bloodstream, which can not be absorbed by the body and be used for energy. When glucose is in the bloodstream, insulin, realized by the pancreas, is responsible for carrying the glucose to its destination. However, when your pancreas doesn’t make enough insulin, or when your body cells don’t respond to and use the insulin, then glucose would remain in your bloodstream.</h4>
+    </div>
+</section>
+<section class="g-container2">
+    <h2>Common Symptoms</h2>
+    <h4>
+        <ul>
+            <li>Increased thirst</li>
+            <li>Weak and tired feelings</li>
+            <li>Blurred vision</li>
+            <li>Numbness or tingling in the hands or feet</li>
+            <li>Slow-healing sores or cuts</li>
+            <li>Unexplained weight loss</li>
+            <li>Frequent urination</li>
+            <li>Frequent unexplained infections</li>
+            <li>Dry mouth</li>
+        </ul>
+    </h4>
+</section>
+<section class="g-container3">
+    <h2>Explore the sections below to learn more about each type specifically.</h2>
+</section>
+<section class="two-squares">
+    <img class="square" src="{{ url_for('static', filename='img/type/type1.jpg') }}">
+    <div class="square">
+        <h2>Type I Diabetes</h2>
+        <h4>Type 1 diabetes is a genetic condition that shows up in early life.</h4>
+        <button>Read More <i class="fa-solid fa-chevron-right" style="color: #16A4E1;"></i></button>
+    </div>
+</section>
+<section class="two-squares">
+    <div class="square">
+        <h2>Type II Diabetes</h2>
+        <h4>Type 2 diabetes is developed over time during one's life time.</h4>
+        <button>Read More <i class="fa-solid fa-chevron-right" style="color: #16A4E1;"></i></button>
+    </div>
+    <img class="square" src="{{ url_for('static', filename='img/type/type2.jpg') }}">
+</section>
+<section class="two-squares">
+    <img class="square" src="{{ url_for('static', filename='img/type/typeG.jpg') }}">
+    <div class="square">
+        <h2>Gestational Diabetes</h2>
+        <h4>Gestational diabetes is a type of diabetes that only develop in pregnant women.</h4>
+        <button>Read More <i class="fa-solid fa-chevron-right" style="color: #16A4E1;"></i></button>
+    </div>
+</section>
+{% endblock %}
