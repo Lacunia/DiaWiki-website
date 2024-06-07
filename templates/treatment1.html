@@ -8,6 +8,24 @@
 {% endblock %}
 
 {% block content %}
-<h2>Type I Diabetes Treatments</h2>
-
+<section class="two-overlap-cards">
+    <div class="overlap-card up">
+        <img class="sub-image" src="{{ url_for('static', filename='img/type/card.png') }}">
+    </div>
+    <div class="overlap-card down">
+        <div class="sub-item">
+            <h1>Type I Diabetes Treatments</h1>
+        </div>
+    </div>
+</section>
+<section class="big-container">
+    <h2>1. Insulin intake</h2>
+    <h4>
+        <ul>
+            <li>For type 1 patients, your pancreas no longer produces insulin. Thus, intensive insulin therapy and insulin intake is to treat it. This intake can be done by taking insulin shots, using an insulin pump, inhaling insulin, etc.</li>
+            <li>The best place for you to inject insulin is through your belly. This is where you will absorb the most insulin.</li>
+            <li>Your doctor will help determine which type of insulin you need</li>
+        </ul>
+    </h4>
+</section>
 {% endblock %}

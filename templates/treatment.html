@@ -8,6 +8,34 @@
 {% endblock %}
 
 {% block content %}
-<h2>General Treatments</h2>
-
+<section class="top-title-container">
+    <div>
+        <h1>Treatments</h1>
+        <h4>No matter what types of diabetes you have, your primary objective when treating them is to keep your blood sugar level in check. Please note that below are just some general treatments for each type. Ultimately, it is still best to consult your family doctor or a walk-in doctor to receive a more personalized treatment.</h4>
+    </div>
+</section>
+<section class="two-squares">
+    <img class="square" src="{{ url_for('static', filename='img/treatment/type1.jpg') }}">
+    <div class="square">
+        <h2>Type I Treatments</h2>
+        <h4>As a type 1 diabetes patient, taking insulin shot everyday is one types of treatment.</h4>
+        <button class="read-more">Read More <i class="fa-solid fa-chevron-right" style="color: #16A4E1;"></i></button>
+    </div>
+</section>
+<section class="two-squares">
+    <div class="square">
+        <h2>Type II Treatments</h2>
+        <h4>As a type 2 diabetes patient, fitness and healthy diet will help you manage your diabetes.</h4>
+        <button class="read-more">Read More <i class="fa-solid fa-chevron-right" style="color: #16A4E1;"></i></button>
+    </div>
+    <img class="square" src="{{ url_for('static', filename='img/treatment/type2.jpg') }}">
+</section>
+<section class="two-squares">
+    <img class="square" src="{{ url_for('static', filename='img/treatment/typeG.png') }}">
+    <div class="square">
+        <h2>Gestational Diabetes Treatments</h2>
+        <h4>As a gestational diabetes patient, meal plans and scheduled physical activity will help keep your blood glucose levels equal to those of healthy pregnant women.</h4>
+        <button class="read-more">Read More <i class="fa-solid fa-chevron-right" style="color: #16A4E1;"></i></button>
+    </div>
+</section>
 {% endblock %}

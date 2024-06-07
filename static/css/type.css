@@ -1,32 +1,4 @@
 /* the following are for the general page */
-.g-container1 {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    width: 100%;
-    height: 90vh;
-    padding: 90px;
-    background-image: url('/static/img/type/hero.jpg');
-    background-repeat: no-repeat;
-    background-size: cover;
-}
-
-.g-container1 div {
-    background-color: #F1F9FE;
-    padding: 20px;
-    border: 2px solid #ABDEF9;
-}
-.g-container1 h1 {
-    padding: 20px;
-}
-
-.g-container1 h4 {
-    padding: 20px;
-    line-height: 1.8;
-}
-
 .g-container2 {
     display: flex;
     flex-direction: column;
@@ -70,67 +42,6 @@
 }
 
 /* the following are for subpages */
-.container1 {
-    display: flex;
-    align-items: center;
-    width: 100%;
-    height: 110vh;
-    background-color: #F1F9FE;
-    border-bottom: 1px solid white;
-}
-
-.sub-container {
-    display: flex;
-    width: inherit;
-    height: 90vh;
-}
-
-.up {
-    z-index: 10;
-    justify-content: center;
-    align-items: left;
-}
-
-.sub-container img {
-    height: 70vh;
-    width: 120vh;
-    box-sizing: border-box;
-    margin: 20px;
-    margin-top: 10px;
-}
-
-.down {
-    z-index: 20; /* The higher the z-index, the more it is to the top of the page */
-    margin-left: -50vh;
-    position: relative;
-    justify-content: center;
-    align-items: flex-end;
-}
-
-.sub-item {
-    box-sizing: border-box;
-    margin: 20px;
-    margin-bottom: 10px;
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    background-color: white;
-    border: 3px solid #E1F2FD;
-    height: 70vh;
-    width: 120vh;
-}
-
-.sub-item h1 {
-    padding: 20px;
-}
-
-.sub-item h4 {
-    padding: 20px;
-    line-height: 1.8;
-}
-
-
 .container2 {
     display: flex;
     flex-direction: column;
