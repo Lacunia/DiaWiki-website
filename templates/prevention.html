@@ -8,6 +8,87 @@
 {% endblock %}
 
 {% block content %}
-<h2>Preventions</h2>
-
+<section class="top-title-container">
+    <div>
+        <h1>Preventions</h1>
+        <h4>This page will inform you of various ways that you can use to prevent yourself from getting diabetes.</h4>
+    </div>
+</section>
+<section class="blk-bottom-container">
+    <div class="blk-bottom-pic">
+        <img src="{{ url_for('static', filename='img/prevention/weight.jpg') }}">
+    </div>
+    <div class="blk-bottom-text">
+        <h2>01</h2>
+        <h2>Lose weight</h2>
+        <h4>
+            <ul>
+                <li>Losing weight can be an effective way of preventing diabetes. By losing approximately 7% to 10% of your body weight once you are diagnosed with prediabetes, which means that you have a high risk of contracting diabetes, is said to be able to reduce your risk by almost 60%.</li>
+                <li>However, be cautious not to lose too much weight, lest it affect your health negatively. Your goal is to first meet your weight loss goal of around 7 to 10%, and then maintain a healthy weight moving forward.</li>
+            </ul>
+        </h4>
+    </div>
+</section>
+<section class="blk-bottom-container">
+    <div class="blk-bottom-text">
+        <h2>02</h2>
+        <h2>Do regular/daily exercises</h2>
+        <h4>
+            <ul>
+                <li>Regular physical activities and exercises can help reduce blood sugar and also increase your body’s sensitivity to insulin, preventing your cells from not responding to it.</li>
+                <li>From personal experiences of prediabetes patients, doing 30 min of aerobic exercises after breakfast, lunch, and dinner can really help keep your blood sugar pressure in check.</li>
+            </ul>
+        </h4>
+    </div>
+    <div class="blk-bottom-pic">
+        <img src="{{ url_for('static', filename='img/prevention/exercise.jpg') }}">
+    </div>
+</section>
+<section class="blk-bottom-container">
+    <div class="blk-bottom-pic">
+        <img src="{{ url_for('static', filename='img/prevention/food.png') }}">
+    </div>
+    <div class="blk-bottom-text">
+        <h2>03</h2>
+        <h2>Consume healthy plant food that contains fiber</h2>
+        <h4>
+            <ul>
+                <li>Fiber-rich food can absorb sugar inside your body, lowering your blood sugar level, and help you lose weight.</li>
+                <li>
+                    examples of fiber-rich food:
+                    <ul>
+                        <li>Fruits, such as tomatoes, peppers, etc.</li>
+                        <li>Non starchy vegetables, such as leafy greens, broccoli, etc.</li>
+                        <li>Legumes, such as beans, chickpeas, etc.</li>
+                        <li>Whole grains, such as whole-wheat bread</li>
+                    </ul>
+                </li>
+                <li>Be creative and you can create healthy but also delicious food with these ingredients.</li>
+            </ul>
+        </h4>
+    </div>
+</section>
+<section class="blk-bottom-container">
+    <div class="blk-bottom-text">
+        <h2>04</h2>
+        <h2>Avoid food with high sugar content</h2>
+        <h4>
+            <ul>
+                <li>Since the core problem of diabetes is the high blood sugar level, intaking even more sugar and not enough fiber can increase your chance of getting diabetes.</li>
+                <li>
+                    examples of food to avoid:
+                    <ul>
+                        <li>White bread, pastries, and flours</li>
+                        <li>Fruits that contain a huge amount of sugar</li>
+                        <li>Processed food with sugar or high-fructose corn syrup</li>
+                    </ul>
+                </li>
+                <li>Check out our forum to find posts about processed foods that are safe for you to consume.</li>
+            </ul>
+        </h4>
+    </div>
+    <div class="blk-bottom-pic">
+        <img src="{{ url_for('static', filename='img/prevention/sugar.jpg') }}">
+    </div>
+</section>
 {% endblock %}
