@@ -8,6 +8,55 @@
 {% endblock %}
 
 {% block content %}
-<h2>Type II Diabetes Treatments</h2>
-
+<section class="two-overlap-cards">
+    <div class="overlap-card up">
+        <img class="sub-image" src="{{ url_for('static', filename='img/type/card.png') }}">
+    </div>
+    <div class="overlap-card down">
+        <div class="sub-item">
+            <h1>Type II Diabetes Treatments</h1>
+        </div>
+    </div>
+</section>
+<section class="dark-pic-container">
+    <div class="text-item">
+        <h2>1. Insulin intake</h2>
+        <h4>
+            <ul>
+                <li>For type 2 patients, your pancreas is still functioning, but it can’t keep up with your body and your cells are becoming resistant to insulin.</li>
+                <li>Similar to type 1 patients, taking insulin shots, using an insulin pump, inhaling insulin, etc. can be apart of your treatment.</li>
+            </ul>
+        </h4>
+    </div>
+    <div class="pic-item">
+        <div class="outer-border">
+            <img src="{{ url_for('static', filename='img/treatment/insulin.jpg') }}">
+        </div>
+    </div>
+</section>
+<section class="light-pic-container">
+    <div class="pic-item">
+        <div class="outer-border">
+            <img src="{{ url_for('static', filename='img/treatment/medicine.jpg') }}">
+        </div>
+    </div>
+    <div class="text-item">
+        <h2>2. Using medications for diabetes</h2>
+    </div>
+</section>
+<section class="dark-pic-container">
+    <div class="text-item">
+        <h2>3. Change your lifestyle</h2>
+        <h4>
+            <ul>
+                <li>You can also slowly treat type 2 diabetes by consuming healthier food and being physically active.</li>
+            </ul>
+        </h4>
+    </div>
+    <div class="pic-item">
+        <div class="outer-border">
+            <img src="{{ url_for('static', filename='img/treatment/lifestyle.jpg') }}">
+        </div>
+    </div>
+</section>
 {% endblock %}

@@ -8,6 +8,45 @@
 {% endblock %}
 
 {% block content %}
-<h2>Gestational Diabetes Treatments</h2>
-
+<section class="two-overlap-cards">
+    <div class="overlap-card up">
+        <img class="sub-image" src="{{ url_for('static', filename='img/type/card.png') }}">
+    </div>
+    <div class="overlap-card down">
+        <div class="sub-item">
+            <h1>Gestational Diabetes Treatments</h1>
+        </div>
+    </div>
+</section>
+<section class="dark-pic-container">
+    <div class="text-item">
+        <h2>1. Change your lifestyle</h2>
+        <h4>
+            <ul>
+                <li>For gestational diabetes patients, you are currently pregnant.</li>
+                <li>A healthy diet and regular, moderate exercises can be the first option for you in order to treat diabetes.</li>
+            </ul>
+        </h4>
+    </div>
+    <div class="pic-item">
+        <div class="outer-border">
+            <img src="{{ url_for('static', filename='img/treatment/lifestyle.jpg') }}">
+        </div>
+    </div>
+</section>
+<section class="light-pic-container">
+    <div class="pic-item">
+        <div class="outer-border">
+            <img src="{{ url_for('static', filename='img/treatment/insulin.jpg') }}">
+        </div>
+    </div>
+    <div class="text-item">
+        <h2>2. Insulin intake / medication</h2>
+        <h4>
+            <ul>
+                <li>If your blood sugar level continues to rise, your doctor may prescribe medications or insulins for you.</li>
+            </ul>
+        </h4>
+    </div>
+</section>
 {% endblock %}

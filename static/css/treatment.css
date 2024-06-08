@@ -1,3 +1,79 @@
-.big-container {
-    
+.dark-pic-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #ABDEF9;
+    border-bottom: 1px solid white;
+    width: 100%;
+    height: 75vh;
+}
+
+.text-item {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 60%;
+    padding-left: 70px;
+}
+
+.text-item h2,
+.text-item ul {
+    margin: 20px;
+}
+
+.text-item h4 {
+    line-height: 1.8;
+    width: 120vh;
+}
+
+.pic-item {
+    display: flex;
+    justify-content: center;
+    width: 40%;
+}
+
+/* 
+    When you want to have two borders, make another div container and give
+    it a class that focus on border. Then, use the outer border container 
+    to decide on the width and height of its content. Finally, make sure 
+    the width and height of the content is 100%, which will make sure that
+    the borders show up. If we use inherit, the borders can be blocked by 
+    the content img.
+*/
+.dark-pic-container .outer-border {
+    width: 80%;
+    height: 50vh;
+    border: 2px solid #3FBCF1;
+}
+
+.dark-pic-container img {
+    width: 100%;
+    height: 100%;
+    border: 10px solid white;
+}
+
+.light-pic-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #F1F9FE;
+    border-bottom: 1px solid white;
+    width: 100%;
+    height: 50vh;
+}
+
+.light-pic-container .outer-border {
+    width: 70%;
+    height: 40vh;
+    border: 2px solid #3FBCF1;
+}
+
+.light-pic-container img {
+    width: 100%;
+    height: 100%;
+    border: 10px solid white;
+}
+
+.light-pic-container .text-item {
+    padding-left: 10px;
 }
