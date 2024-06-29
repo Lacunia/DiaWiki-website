@@ -56,12 +56,16 @@
     <!--placeholder for the image slider-->
     <!-- tutorial: https://www.youtube.com/watch?v=iBcjzaOvE94-->
 </section>
-<section class="two-squares">
-    <div class="square">
-        <h2>Become A Member To Share Your Story!</h2>
-        <button>Sign up</button>
-    </div>
-    <img class="square" src="{{ url_for('static', filename='img/home/sign-up.png') }}">
-</section>
+{% if "user" not in session %}
+    <section class="two-squares">
+        <div class="square">
+            <h2>Become A Member To Share Your Story!</h2>
+            <a href="{{ url_for('register') }}">
+                <button class="signup-btn">Sign up</button>
+            </a>    
+        </div>
+        <img class="square" src="{{ url_for('static', filename='img/home/sign-up.png') }}">
+    </section>
+{% endif %}
 
 {% endblock %}

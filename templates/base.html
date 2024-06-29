@@ -55,7 +55,11 @@
                 <li><a href="{{ url_for('prevention') }}">Prevention</a></li>
                 <li><a href="{{ url_for('forum') }}">Forum</a></li>
                 <li><a href="{{ url_for('profile') }}"><i class="fa-solid fa-user"></i></a></li>
-                <li><a href="">Login</a></li>
+                {% if "user" in session %}
+                    <li><a href="{{ url_for('logout') }}">Logout</a></li>
+                {% else %}
+                    <li><a href="{{ url_for('login') }}">Login/register</a></li>
+                {% endif %}
             </ul>
         </div>
     </section>

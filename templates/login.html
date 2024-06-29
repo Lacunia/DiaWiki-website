@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+
+{% block title %}Login{% endblock %}
+
+{% block additional_css %}
+    <!-- Link to child-specific CSS file -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/login.css') }}">
+{% endblock %}
+
+{% block content %}
+<section class="login-page">
+    <div class="login-form">
+        <h2>Login</h2>
+        {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            <ul class="flashes">
+                {% for message in messages %}
+                    <div>{{ message }}</div>
+                {% endfor %}
+            </ul>
+        {% endif %}
+        {% endwith %}
+        <div class="login-card">
+            <form action="/login" method="post">
+                <div>
+                    <label for="username"><h4>Username:</h4></label>
+                    <input class="login-input" type="text" id="username" name="username" placeholder="i.e. johndoe123" required>
+                </div>
+                <div>
+                    <label for="password"><h4>Password:</h4></label>
+                    <input class="login-input" type="password" id="password" name="password" required>
+                </div>
+                <div>
+                    <button class="read-more" type="submit" id="submit">Login</button>
+                </div>
+            </form>
+        </div>
+
+        <div class="login-card">
+            <div>
+                <!-- already have account -->
+                <h4>Don't have an account yet?</h4>
+                <a href="{{ url_for('register') }}"><h4>Register Here</h4></a>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock %}

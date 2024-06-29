@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block title %}Please Login!{% endblock %}
+
+{% block additional_css %}
+    <!-- Link to child-specific CSS file -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/login.css') }}">
+{% endblock %}
+
+{% block content %}
+
+<section class="login-page">
+    <div class="login-form">
+        <h2>Please login to gain access to this page!</h2>
+        <a href="{{ url_for('login') }}">
+            <button class="signup-btn">Login Here</button>
+        </a>
+    </div>
+</section>
+
+{% endblock %}

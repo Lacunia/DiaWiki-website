@@ -256,6 +256,11 @@ footer {
     color: #0a84bf;
 }
 
+.read-more:hover {
+    background-color: #F1F9FE;
+} 
+
+
 /* This is another type of button */
 .signup-btn {
     padding: 10px;
@@ -265,10 +270,15 @@ footer {
     height: 50px;
     border-radius: 25px;
     border: 1px solid #ABDEF9;
-    box-shadow: 1px 1px 2px rgb(17, 36, 48);
+    box-shadow: 1px 2px 2px rgb(17, 36, 48);
     font-size: 17px;
     font-weight: 600;
     color: #16A4E1;
+}
+
+.signup-btn:hover {
+    transform: translate(2px, 2px);
+    box-shadow: none;
 }
 
 .top-title-container {
