@@ -8,16 +8,41 @@
 {% endblock %}
 
 {% block content %}
+<section class="pf-top-box">
+    <h2>My Profile</h2>
+    {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            <ul class="flashes">
+                {% for message in messages %}
+                    <div>{{ message }}</div>
+                {% endfor %}
+            </ul>
+        {% endif %}
+    {% endwith %}
+</section>
+<section class="pf-bot-box">
+    <div>
+        <!-- user the route in app.py, get the profile picture for the user -->
+        <img id="profile-pic" src="/get_pfp/{{ user.username }}">
+        <!-- this button allows us to upload profile picture from laptop -->
+        <button id="upload-btn">Change Profile</button>
+        <!-- this form allows use to choose the picture, and once we submit, it performs the action of route "upload" -->
+        <!-- this route is already set up so that it updates the pfp -->
+        <form id="upload-form" action="{{ url_for('upload') }}" method="post" enctype="multipart/form-data" style="display: none;">
+            <input type="file" name="pfp" id="file-input" autocomplete="off" required>
+        </form>
+    </div>
+    <div>
+        <h3>Info</h3>
+        <div>
+            <h4>Username: {{ user.username }}</h4>
+            <h4>Email: {{ user.email }}</h4>
+        </div>
+    </div>
+</section>
 
-<h2>My Profile</h2>
-{% with messages = get_flashed_messages() %}
-    {% if messages %}
-        <ul class="flashes">
-            {% for message in messages %}
-                <div>{{ message }}</div>
-            {% endfor %}
-        </ul>
-    {% endif %}
-{% endwith %}
+{% endblock %}
 
+{% block scripts %}
+<script rel="scriptsheet" src="{{ url_for('static', filename='js/profile.js') }}"></script>
 {% endblock %}

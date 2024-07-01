@@ -1,8 +1,9 @@
-from flask import Flask, render_template, request, flash, redirect, url_for, session
+from flask import Flask, render_template, request, flash, redirect, url_for, session, send_file
 from flask_sqlalchemy import SQLAlchemy
 from sqlalchemy import func
 from datetime import datetime, timedelta
 from flask_bcrypt import Bcrypt, check_password_hash
+from io import BytesIO
 
 app = Flask(__name__)
 bcrypt = Bcrypt(app)
@@ -20,6 +21,7 @@ class Person(db.Model):
     username = db.Column(db.String(20), primary_key=True)
     email = db.Column(db.String(120), unique=True, nullable=False)
     password = db.Column(db.String(20), nullable = False)
+    pfp = db.Column(db.LargeBinary)
 
     def __repr__(self):
         return f"Person('{self.username}', '{self.email}')"
@@ -87,9 +89,42 @@ def forum():
 @app.route('/profile')
 def profile():
     if "user" in session:
-        return render_template('profile.html')
+        # get the username and email of the user and send it to the html page
+        username = session['user']
+        user = Person.query.filter_by(username=username).first()
+        return render_template('profile.html', user=user)
     else:
         return render_template('warning.html')
+
+
+# this route is for uploading pfp picture into the database
+@app.route('/upload', methods=['POST'])
+def upload():
+    if 'user' not in session:
+        return redirect(url_for('login'))
+
+    user = Person.query.filter_by(username=session['user']).first()
+    # the following get the user to choose a picture from their laptop and upload it into the database
+    file = request.files['pfp']
+    if file:
+        # set the value of this attribute to the file (picture) that we just chose
+        user.pfp = file.read()
+        db.session.commit()
+        flash('Profile picture updated successfully')
+        return redirect(url_for('profile'))
+    # else
+    flash('No file selected for upload', 'error')
+    return redirect(url_for('profile'))
+
+
+@app.route('/get_pfp/<username>')
+def get_pfp(username):
+    user = Person.query.filter_by(username=username).first()
+    # if the user and their pfp both exists and are not null, then show the stored pfp
+    # otherwise, use the general pic
+    if user and user.pfp:
+        return send_file(BytesIO(user.pfp), mimetype='image/jpeg')
+    return send_file('static/img/general-pfp.jpg', mimetype='image/jpeg')
 
 
 @app.route('/login', methods=['GET', 'POST'])

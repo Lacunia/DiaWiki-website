@@ -47,14 +47,3 @@
     font-size: 20;
     padding: 10px;
 }
-
-.flashes {
-    max-width: 90%;
-    background-color: #E1F2FD;
-    border: 1px solid #0C5980;
-    border-radius: 5px;
-    padding: 5px;
-    margin: 20px;
-    text-align: center;
-    box-sizing: border-box;
-}

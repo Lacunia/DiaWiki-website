@@ -219,6 +219,7 @@ footer {
 
 
 /* here are some common styles that all pages can use */
+/* one picture and one text square layout */
 .two-squares {
     display: flex;
     width: 100%;
@@ -247,6 +248,7 @@ footer {
 }
 
 /* This is one type of square's button */
+/* white background, blue word and border */
 .read-more {
     border: 1px solid #0a84bf;;
     background-color: white;
@@ -262,6 +264,7 @@ footer {
 
 
 /* This is another type of button */
+/* blue background with shadow */
 .signup-btn {
     padding: 10px;
     margin: 25px;
@@ -281,6 +284,7 @@ footer {
     box-shadow: none;
 }
 
+/* general page's top banner (background pic + white card on top) */
 .top-title-container {
     display: flex;
     flex-direction: column;
@@ -309,6 +313,7 @@ footer {
     line-height: 1.8;
 }
 
+/* 2 overlapping cards */
 .two-overlap-cards {
     display: flex;
     align-items: center;
@@ -369,6 +374,7 @@ footer {
     line-height: 1.8;
 }
 
+/* the container with white background and black line on the bottom */
 .blk-bottom-container {
     display: flex;
     justify-content: center;
@@ -411,4 +417,16 @@ footer {
 
 .blk-bottom-text h2 {
     padding-bottom: 10px;
+}
+
+/* for the flash message box */
+.flashes {
+    max-width: 90%;
+    background-color: #E1F2FD;
+    border: 1px solid #0C5980;
+    border-radius: 5px;
+    padding: 5px;
+    margin: 20px;
+    text-align: center;
+    box-sizing: border-box;
 }
