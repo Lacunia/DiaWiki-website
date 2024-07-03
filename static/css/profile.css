@@ -1,0 +1,66 @@
+/* With the title and the flash message */
+.pf-top-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 25px;
+}
+
+.pf-top-box h1 {
+    border-top: 1px solid #0C5980;
+    border-bottom: 1px solid #0C5980;
+    padding: 15px;
+    width: 100%;
+    text-align: center;
+    background-image: url(/static/img/title-pic.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+/* With pfp and info */
+.pf-bot-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px;
+}
+
+.pf-box {
+    border: 2px solid #0C5980;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    height: 230px;
+}
+
+.pfp {
+    width: 20%;
+    align-items: center;
+    justify-content: center;
+    margin: 5px;
+}
+
+#profile-pic {
+    border: 3px solid #0C5980;
+    border-radius: 100px;
+    width: 150px;
+    height: 150px;
+}
+
+#upload-btn {
+    margin: 10px;
+    width: 140px;
+    height: 40px;
+}
+
+.info {
+    width: 50%;
+    padding: 20px;
+    margin: 5px;
+}
+
+.info h3 {
+    text-align: center;
+}
