@@ -1,6 +1,6 @@
 from flask import Flask, render_template, request, flash, redirect, url_for, session, send_file
 from flask_sqlalchemy import SQLAlchemy
-from sqlalchemy import func
+from sqlalchemy import desc, func
 from datetime import datetime, timedelta
 from flask_bcrypt import Bcrypt, check_password_hash
 from io import BytesIO
@@ -22,9 +22,22 @@ class Person(db.Model):
     email = db.Column(db.String(120), unique=True, nullable=False)
     password = db.Column(db.String(20), nullable = False)
     pfp = db.Column(db.LargeBinary)
+    topic = db.relationship('Topic', backref='person', lazy=True, uselist=False)
+    comment = db.relationship('Comment', backref='person', lazy=True, uselist=False)
 
-    def __repr__(self):
-        return f"Person('{self.username}', '{self.email}')"
+class Topic(db.Model):
+    __tablename__ = 'Topic'
+    id = db.Column(db.Integer, primary_key=True)
+    title = db.Column(db.String, unique=True, nullable=False)
+    description = db.Column(db.String)
+    username = db.ForeignKey('Person.username')
+
+class Comment(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    text = db.Column(db.String, unique=True, nullable=False)
+    topicId = db.Column(db.String)
+    username = db.ForeignKey('Person.username')
+
 
 with app.app_context(): # create any database that are new
     db.create_all()
@@ -81,10 +94,45 @@ def prevention():
 @app.route('/forum')
 def forum():
     if "user" in session:
-        return render_template('forum.html')
+        topics = Topic.query.order_by(desc(Topic.date)).all()
+        return render_template('forum.html', topics=topics)
     else:
         return render_template('warning.html')
 
+
+@app.route('/add_topic', methods=["GET", "POST"])
+def add_topic():
+    if "user" in session:
+        # add a new topic/post
+        if request.method == "POST":
+            topic = Topic(
+                title=request.form["title"],
+                description=request.form["description"],
+                username=session.get('user')
+            )
+            db.session.add(topic)
+            db.session.commit()
+        return render_template('add_topic.html')
+    else:
+        return render_template('warning.html')
+    
+
+@app.route('/topic', methods=["GET", "POST"])
+def topic():
+    if "user" in session:
+        # add a new comment
+        if request.method == "POST":
+            comment = Comment(
+                text=request.form["text"],
+                topicId=request.form["topicId"],
+                username=session.get('user')
+            )
+            db.session.add(comment)
+            db.session.commit()
+        return render_template('topic.html')
+    else:
+        return render_template('warning.html')
+    
 
 @app.route('/profile')
 def profile():

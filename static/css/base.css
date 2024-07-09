@@ -67,6 +67,7 @@ body {
     padding: 20px 80px;
     background-color: #E1F2FD;
     box-shadow: 0 1px 5px rgb(17, 36, 48);
+    width: 100%; /* makes sure that the size of the navbar is always the same as the window size */
     /* the following makes sure that the navbar sticks to the top */
     z-index: 999;
     /* sticky makes this element be treated as relative until it 
