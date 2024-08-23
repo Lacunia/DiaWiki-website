@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block title %}Add topic{% endblock %}
+
+{% block additional_css %}
+    <!-- Link to child-specific CSS file -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/forum.css') }}">
+{% endblock %}
+
+{% block content %}
+<section>
+    <h2>Add a topic</h2>
+    <form action="/add_topic" method="post">
+        <label for="title">1. What do you like about the instructor's teaching?</label> <br>
+        <input id="title" name="title">
+        <br>
+                
+        <label for="description">2. What do you recommend the instructor to do to improve their teaching?</label> <br>
+        <textarea id="description" name="description"></textarea>
+        <br>
+
+        <button type="submit" id="post">Post</button>
+    </form>
+</section>
+{% endblock %}

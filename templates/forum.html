@@ -10,9 +10,37 @@
 {% block content %}
 <section class="top-title-container">
     <div>
-        <h2>Forum</h2>
-        <h3>Connect with other diabetes patients!</h3>
+        <h1>Forum</h1>
+        <h4>Welcome! Have a look around and join the discussions. Connect with other diabetes patients!</h4>
     </div>
 </section>
-
+<section class="forum-subtitle">
+    <div>
+        <h3>Posts</h3>
+        <a href="{{ url_for('add_topic') }}">
+            <button class="signup-btn"><i class="fa-solid fa-plus" style="color: #16A4E1;"></i> New Post</button>
+        </a>
+    </div>
+</section>
+<section class="post-subtitle">
+    <div>
+        <h4>Title</h4>
+        <h4>Date</h4>
+    </div>
+</section>
+<section class="postlist">
+    {% for topic in topics %}
+    <div class="post">
+        <div>
+            <a href="/topic/{{topic.id}}">
+                <h4>{{ topic.title }}</h4>
+            </a>
+            <h5>{{ topic.username }}</h5>
+        </div>
+        <div>
+            <h5>{{ topic.date.strftime('%Y-%m-%d') }}</h5>
+        </div>
+    </div>    
+    {% endfor %}
+</section>
 {% endblock %}

@@ -1,0 +1,74 @@
+.forum-subtitle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin: 20px 0 0 0;
+}
+
+.forum-subtitle div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 50px;
+    width: 85%;
+    border-bottom: 2px solid #ABDEF9;
+}
+
+.forum-subtitle div button{
+    margin-right: 15px;
+}
+
+.post-subtitle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.post-subtitle div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 60px;
+    width: 85%;
+    background-color: #E1F2FD;
+}
+
+.postlist {
+    display: flex;
+    justify-content: center;
+}
+
+.post {
+    border-top: 1px solid #ABDEF9;
+    border-bottom: 1px solid #ABDEF9;
+    width: 85%;
+    margin: 20px;
+    margin-top: 0;
+    padding: 20px 60px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.post div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.post div h4 {
+    font-size: 25px;
+    color: #16A4E1;
+    margin-bottom: 10px;
+}
+
+.post div h4:hover {
+    font-size: 25px;
+    color: #0C5980;
+    margin-bottom: 10px;
+}
+
+.post div a {
+    text-decoration: none;
+}

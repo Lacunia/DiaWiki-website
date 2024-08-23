@@ -1,6 +1,6 @@
 from flask import Flask, render_template, request, flash, redirect, url_for, session, send_file
 from flask_sqlalchemy import SQLAlchemy
-from sqlalchemy import desc, func
+from sqlalchemy import desc, DateTime
 from datetime import datetime, timedelta
 from flask_bcrypt import Bcrypt, check_password_hash
 from io import BytesIO
@@ -30,14 +30,17 @@ class Topic(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     title = db.Column(db.String, unique=True, nullable=False)
     description = db.Column(db.String)
-    username = db.ForeignKey('Person.username')
+    username = db.Column(db.String(20), db.ForeignKey('Person.username'), nullable=False) 
+    date = db.Column(db.DateTime, nullable=False, default=datetime.utcnow)
+    like = db.Column(db.Integer, nullable=False, default=0)
 
 class Comment(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     text = db.Column(db.String, unique=True, nullable=False)
     topicId = db.Column(db.String)
-    username = db.ForeignKey('Person.username')
-
+    username = db.Column(db.String(20), db.ForeignKey('Person.username'), nullable=False) 
+    date = db.Column(db.DateTime, nullable=False, default=datetime.utcnow)
+    like = db.Column(db.Integer, nullable=False, default=0)
 
 with app.app_context(): # create any database that are new
     db.create_all()
@@ -117,7 +120,7 @@ def add_topic():
         return render_template('warning.html')
     
 
-@app.route('/topic', methods=["GET", "POST"])
+@app.route('/topic/<int:id>', methods=["GET", "POST"])
 def topic():
     if "user" in session:
         # add a new comment
@@ -125,7 +128,8 @@ def topic():
             comment = Comment(
                 text=request.form["text"],
                 topicId=request.form["topicId"],
-                username=session.get('user')
+                username=session.get('user'),
+                date=datetime.now(),
             )
             db.session.add(comment)
             db.session.commit()
