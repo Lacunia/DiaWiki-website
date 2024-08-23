@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+
+{% block title %}{{ topic.title }}{% endblock %}
+
+{% block additional_css %}
+    <!-- Link to child-specific CSS file -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/topic.css') }}">
+{% endblock %}
+
+{% block content %}
+<section>
+    <div>
+        <h2>{{ topic.title }}</h2>
+        <h3>Posted by {{ topic.username }}</h3>
+    </div>
+    <!-- Add a line at the bottom of this section -->
+</section>
+<section>
+    <h4>{{ topic.description }}</h4>
+    <i class="fa-regular fa-heart" style="color: #0a84bf;"></i> <!-- heart icon -->
+</section>
+<section class="comment-section">
+    <!-- Add a line on top of this section -->
+    <h3>Comments</h3>
+    <div id="comment-form">
+        <textarea id="comment" name="comment"></textarea>
+        <br>
+        <button type="submit" id="submit">Comment</button>
+    </div>
+    <!-- for loop to get all comments for this topic -->
+</section>
+{% endblock %}

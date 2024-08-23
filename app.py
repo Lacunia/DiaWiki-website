@@ -121,7 +121,7 @@ def add_topic():
     
 
 @app.route('/topic/<int:id>', methods=["GET", "POST"])
-def topic():
+def topic(id):
     if "user" in session:
         # add a new comment
         if request.method == "POST":
@@ -133,7 +133,8 @@ def topic():
             )
             db.session.add(comment)
             db.session.commit()
-        return render_template('topic.html')
+        topic = Topic.query.filter_by(id=id).first()
+        return render_template('topic.html', topic=topic)
     else:
         return render_template('warning.html')
     
