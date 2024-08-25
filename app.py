@@ -126,7 +126,7 @@ def topic(id):
         # add a new comment
         if request.method == "POST":
             comment = Comment(
-                text=request.form["text"],
+                text=request.form["comment"],
                 topicId=id,
                 username=session.get('user'),
             )
