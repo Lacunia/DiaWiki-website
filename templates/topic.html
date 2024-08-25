@@ -12,7 +12,7 @@
     <div>
         <h2>{{ topic.title }}</h2>
         <h4>Posted by {{ topic.username }}</h4>
-        <h5>{{ topic.date }}</h5>
+        <h5>{{ topic.date.strftime('%Y-%m-%d') }}</h5>
     </div>
     <!-- put a box (border) around this section -->
 </section>
@@ -30,7 +30,19 @@
             <textarea id="comment" name="comment"></textarea>
             <button type="submit" id="submit" class="signup-btn">Comment</button>
         </form>
+        <!-- for loop to get all comments for this topic -->
+        {% for comment in comments %}
+        <div class="comment-box">
+            <div>
+                <h4>{{ comment.text }}</h4>
+                <h5>{{ comment.username }}</h5>
+                <h5>{{ comment.date.strftime('%Y-%m-%d') }}</h5>
+            </div>
+            <div>
+                <i class="fa-regular fa-heart" style="color: #0a84bf;"></i>
+            </div>
+        </div>
+        {% endfor %}
     </div>
-    <!-- for loop to get all comments for this topic -->
 </section>
 {% endblock %}

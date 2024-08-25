@@ -35,9 +35,10 @@ class Topic(db.Model):
     like = db.Column(db.Integer, nullable=False, default=0)
 
 class Comment(db.Model):
+    __tablename__ = 'Comment'
     id = db.Column(db.Integer, primary_key=True)
     text = db.Column(db.String, unique=True, nullable=False)
-    topicId = db.Column(db.String)
+    topicId = db.Column(db.Integer, nullable=False)
     username = db.Column(db.String(20), db.ForeignKey('Person.username'), nullable=False) 
     date = db.Column(db.DateTime, nullable=False, default=datetime.utcnow)
     like = db.Column(db.Integer, nullable=False, default=0)
@@ -133,7 +134,8 @@ def topic(id):
             db.session.add(comment)
             db.session.commit()
         topic = Topic.query.filter_by(id=id).first()
-        return render_template('topic.html', topic=topic)
+        comments = Comment.query.filter_by(topicId=id).order_by(desc(Comment.date)).all()
+        return render_template('topic.html', topic=topic, comments=comments)
     else:
         return render_template('warning.html')
     
