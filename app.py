@@ -127,9 +127,8 @@ def topic(id):
         if request.method == "POST":
             comment = Comment(
                 text=request.form["text"],
-                topicId=request.form["topicId"],
+                topicId=id,
                 username=session.get('user'),
-                date=datetime.now(),
             )
             db.session.add(comment)
             db.session.commit()

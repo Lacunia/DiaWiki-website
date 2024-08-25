@@ -8,24 +8,28 @@
 {% endblock %}
 
 {% block content %}
-<section>
+<section class="topic-box">
     <div>
         <h2>{{ topic.title }}</h2>
-        <h3>Posted by {{ topic.username }}</h3>
+        <h4>Posted by {{ topic.username }}</h4>
+        <h5>{{ topic.date }}</h5>
     </div>
-    <!-- Add a line at the bottom of this section -->
+    <!-- put a box (border) around this section -->
 </section>
-<section>
-    <h4>{{ topic.description }}</h4>
-    <i class="fa-regular fa-heart" style="color: #0a84bf;"></i> <!-- heart icon -->
+<section class="topic-box">
+    <div>
+        <h4>{{ topic.description }}</h4>
+        <i class="fa-regular fa-heart" style="color: #0a84bf;"></i> <!-- heart icon -->
+    </div>
 </section>
-<section class="comment-section">
+<section class="topic-box">
     <!-- Add a line on top of this section -->
-    <h3>Comments</h3>
-    <div id="comment-form">
-        <textarea id="comment" name="comment"></textarea>
-        <br>
-        <button type="submit" id="submit">Comment</button>
+    <div>
+        <h3>Comments</h3>
+        <form action="/topic/{{ topic.id }}" method="post" id="comment-form">
+            <textarea id="comment" name="comment"></textarea>
+            <button type="submit" id="submit" class="signup-btn">Comment</button>
+        </form>
     </div>
     <!-- for loop to get all comments for this topic -->
 </section>

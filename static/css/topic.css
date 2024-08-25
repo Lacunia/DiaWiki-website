@@ -1,0 +1,68 @@
+.topic-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.topic-box > div {
+    border: 2px solid #ABDEF9;
+    width: 85%;
+    padding: 20px;
+    margin: 40px 0 0 0;
+}
+
+.topic-box > div i {
+    margin-top: 20px;
+}
+
+#add-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#add-form div {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    margin: 10px 0;
+}
+
+input, textarea, select {
+    margin: 10px 0;
+    padding: 10px;
+    font-size: 20px;
+}
+
+textarea {
+    height: 150px;
+}
+
+#blue-background {
+    background-color: #F1F9FE;
+}
+
+#center-text {
+    text-align: center;
+}
+
+#comment-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    align-items: left;
+}
+
+#comment-form textarea {
+    width: 100%;
+}
+
+.signup-btn {
+    margin-left: 0;
+    margin-top: 10px;
+}
