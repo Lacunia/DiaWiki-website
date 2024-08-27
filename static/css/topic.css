@@ -22,6 +22,9 @@
     margin-right: 7px;
 }
 
+i:hover {
+    font-weight: 900; /* Makes it solid */
+}
 
 #add-form {
     display: flex;

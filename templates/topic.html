@@ -20,8 +20,8 @@
     <div>
         <h4>{{ topic.description }}</h4>
         <div class="like-count">
-            <a href="{{ url_for('add_like', id=topic.id) }}">
-                <i class="fa-regular fa-heart" style="color: #0a84bf;"></i> <!-- heart icon -->
+            <a href="{{ url_for('like_post', id=topic.id) }}">
+                <i class="fa-regular fa-heart" style="color: #16A4E1;"></i> <!-- heart icon -->
             </a>
             <h5>{{ topic.like }}</h5>
         </div>
@@ -43,8 +43,11 @@
                 <h5>{{ comment.username }}</h5>
                 <h5>{{ comment.date.strftime('%Y-%m-%d') }}</h5>
             </div>
-            <div>
-                <i class="fa-regular fa-heart" style="color: #16A4E1;"></i>
+            <div class="like-count">
+                <a href="{{ url_for('like_comment', comment_id=comment.id, topic_id=topic.id) }}">
+                    <i class="fa-regular fa-heart" style="color: #16A4E1;"></i> <!-- heart icon -->
+                </a>
+                <h5>{{ comment.like }}</h5>
             </div>
         </div>
         {% endfor %}

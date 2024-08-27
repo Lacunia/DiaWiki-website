@@ -140,13 +140,22 @@ def topic(id):
         return render_template('warning.html')
 
 
-@app.route('/add_like/<int:id>')
-def add_like(id):
+@app.route('/like_post/<int:id>')
+def like_post(id):
     topic = Topic.query.filter_by(id=id).first()
     if topic:
         topic.like += 1
     db.session.commit()
     return redirect(url_for('topic', id=id))
+
+
+@app.route('/like_comment/<int:comment_id>/<int:topic_id>')
+def like_comment(comment_id, topic_id):
+    comment = Comment.query.filter_by(id=comment_id).first()
+    if comment:
+        comment.like += 1
+    db.session.commit()
+    return redirect(url_for('topic', id=topic_id))
 
 
 @app.route('/profile')
