@@ -101,6 +101,7 @@ def forum():
         topics = Topic.query.order_by(desc(Topic.date)).all()
         return render_template('forum.html', topics=topics)
     else:
+        session['next_url'] = request.url
         return render_template('warning.html')
 
 
@@ -118,6 +119,7 @@ def add_topic():
             db.session.commit()
         return render_template('add_topic.html')
     else:
+        session['next_url'] = request.url
         return render_template('warning.html')
     
 
@@ -137,6 +139,7 @@ def topic(id):
         comments = Comment.query.filter_by(topicId=id).order_by(desc(Comment.date)).all()
         return render_template('topic.html', topic=topic, comments=comments)
     else:
+        session['next_url'] = request.url
         return render_template('warning.html')
 
 
@@ -212,8 +215,12 @@ def login():
             return render_template('login.html')
         else:
             session['user'] = username
+            session['logged_in'] = True
             session.permanent=True  # closing the browser will not log out
-            flash('Logged in Successfully!')
+
+            if 'next_url' in session:
+                next_url = session.pop('next_url')
+                return redirect(next_url)
             return redirect(url_for('profile'))
 
 
@@ -252,6 +259,9 @@ def add_users(reg_details):
 @app.route('/logout', methods=['GET', 'POST'])
 def logout():
     session.pop('user', None)
+    session['logged_in'] = False
+    if 'next_url' in session:
+        session.pop('next_url')
     return redirect(url_for('home'))
 
 
