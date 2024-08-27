@@ -138,7 +138,16 @@ def topic(id):
         return render_template('topic.html', topic=topic, comments=comments)
     else:
         return render_template('warning.html')
-    
+
+
+@app.route('/add_like/<int:id>')
+def add_like(id):
+    topic = Topic.query.filter_by(id=id).first()
+    if topic:
+        topic.like += 1
+    db.session.commit()
+    return redirect(url_for('topic', id=id))
+
 
 @app.route('/profile')
 def profile():

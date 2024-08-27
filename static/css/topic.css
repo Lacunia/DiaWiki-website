@@ -13,9 +13,15 @@
     margin: 40px 0 0 0;
 }
 
-.topic-box > div i {
+.like-count {
+    display: flex;
     margin-top: 20px;
 }
+
+.like-count > a {
+    margin-right: 7px;
+}
+
 
 #add-form {
     display: flex;
@@ -79,4 +85,8 @@ textarea {
 
 .comment-box h4 {
     margin-bottom: 5px;
+}
+
+a {
+    text-decoration: none;
 }

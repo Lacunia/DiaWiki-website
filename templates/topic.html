@@ -19,7 +19,12 @@
 <section class="topic-box">
     <div>
         <h4>{{ topic.description }}</h4>
-        <i class="fa-regular fa-heart" style="color: #0a84bf;"></i> <!-- heart icon -->
+        <div class="like-count">
+            <a href="{{ url_for('add_like', id=topic.id) }}">
+                <i class="fa-regular fa-heart" style="color: #0a84bf;"></i> <!-- heart icon -->
+            </a>
+            <h5>{{ topic.like }}</h5>
+        </div>
     </div>
 </section>
 <section class="topic-box">
