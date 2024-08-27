@@ -26,13 +26,24 @@
     width: 100%;
 }
 
-.post-subtitle div {
+.post-subtitle > div {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 20px 60px;
     width: 85%;
     background-color: #E1F2FD;
+}
+
+.like-date {
+    display: flex;
+    width: 20%;
+    justify-content: left;
+    align-items: center;
+}
+
+.like-date > h5:first-child {
+    margin-right: 50px;
 }
 
 .postlist {
@@ -51,7 +62,7 @@
     justify-content: space-between;
 }
 
-.post div {
+.post > div:first-child {
     display: flex;
     flex-direction: column;
     justify-content: center;

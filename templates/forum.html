@@ -25,7 +25,10 @@
 <section class="post-subtitle">
     <div>
         <h4>Title</h4>
-        <h4>Date</h4>
+        <div class="like-date">
+            <h5><i class="fa-regular fa-heart" style="color: #16A4E1;"></i></h5>
+            <h4>Date</h4>
+        </div>
     </div>
 </section>
 <section class="postlist">
@@ -37,7 +40,8 @@
             </a>
             <h5>{{ topic.username }}</h5>
         </div>
-        <div>
+        <div class="like-date">
+            <h5>{{ topic.like }}</h5>
             <h5>{{ topic.date.strftime('%Y-%m-%d') }}</h5>
         </div>
     </div>    
